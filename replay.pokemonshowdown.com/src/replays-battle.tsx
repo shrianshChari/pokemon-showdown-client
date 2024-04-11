@@ -195,6 +195,11 @@ export class BattlePanel extends preact.Component<{id: string}> {
     case 191: // / (?)
       if (e.shiftKey) {
         alert(
+          'h = hyperfast speed\n' +
+          'f = fast speed\n' +
+          'n = normal speed\n' +
+          's = slow speed\n' +
+          'r = really slow speed\n' +
           'k = play/pause\n' +
           'j = previous turn\n' +
           'l = next turn\n' +
@@ -218,6 +223,21 @@ export class BattlePanel extends preact.Component<{id: string}> {
       break;
     case 77: // m
       this.toggleMute();
+      break;
+    case 72: // h
+      this.changeSpeed('hyperfast');
+      break;
+    case 70: // f
+      this.changeSpeed('fast');
+      break;
+    case 78: // n
+      this.changeSpeed('normal');
+      break;
+    case 83: // s
+      this.changeSpeed('slow');
+      break;
+    case 82: // r
+      this.changeSpeed('reallyslow');
       break;
     }
     this.forceUpdate();
