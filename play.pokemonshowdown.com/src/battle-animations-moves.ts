@@ -38083,7 +38083,7 @@ export const BattleMoveAnims: AnimTable = {
 				x: attacker.x,
 				y: attacker.y,
 				z: attacker.behind(-30),
-				scale: 0.3,
+				scale: 0.4,
 				opacity: 0.4,
 				time: 400,
 			}, {
@@ -38108,7 +38108,7 @@ export const BattleMoveAnims: AnimTable = {
 					x: attacker.x,
 					y: attacker.y,
 					z: attacker.behind(-30),
-					scale: 0.3,
+					scale: 0.4,
 					opacity: 0.5,
 					time: 100 * i + 400,
 				}, {
@@ -38189,7 +38189,7 @@ export const BattleMoveAnims: AnimTable = {
 				x: attacker.x,
 				y: attacker.y,
 				z: attacker.behind(-30),
-				scale: 0.3,
+				scale: 0.4,
 				opacity: 0.4,
 				time: 400,
 			}, {
@@ -38215,7 +38215,7 @@ export const BattleMoveAnims: AnimTable = {
 					x: attacker.x,
 					y: attacker.y,
 					z: attacker.behind(-30),
-					scale: 0.3,
+					scale: 0.4,
 					opacity: 0.4,
 					time: 100 * i + 400,
 				}, {
@@ -38223,13 +38223,13 @@ export const BattleMoveAnims: AnimTable = {
 					y: defender.y,
 					z: defender.behind(30),
 					scale: 1.2,
-					opacity: 0.2,
+					opacity: 0.4,
 					time: 100 * i + 400 + 200,
 				}, 'accel', 'fade');
 
 				scene.showEffect('electroball', {
-					x: attacker.x - 30,
-					y: attacker.y,
+					x: attacker.x + 28, // 40 * cos(30deg) ~ 28
+					y: attacker.y + 20,
 					z: attacker.behind(-30),
 					scale: 0.3,
 					opacity: 0.7,
@@ -38238,13 +38238,13 @@ export const BattleMoveAnims: AnimTable = {
 					x: defender.x,
 					y: defender.y,
 					z: defender.behind(30),
-					scale: 0.6,
-					opacity: 0.2,
+					scale: 1.5,
+					opacity: 0,
 					time: 100 * i + 400 + 200,
 				}, 'linear', 'fade');
 				scene.showEffect('flareball', {
-					x: attacker.x - 30,
-					y: attacker.y,
+					x: attacker.x + 28,
+					y: attacker.y + 20,
 					z: attacker.behind(-30),
 					scale: 0.2,
 					opacity: 0.5,
@@ -38253,14 +38253,14 @@ export const BattleMoveAnims: AnimTable = {
 					x: defender.x,
 					y: defender.y,
 					z: defender.behind(30),
-					scale: 0.4,
-					opacity: 0.1,
+					scale: 1.2,
+					opacity: 0,
 					time: 100 * i + 400 + 200,
 				}, 'accel', 'fade');
 
 				scene.showEffect('electroball', {
-					x: attacker.x + 30,
-					y: attacker.y,
+					x: attacker.x - 28, // 40 * cos(30deg) ~ 28
+					y: attacker.y + 20,
 					z: attacker.behind(-30),
 					scale: 0.3,
 					opacity: 0.7,
@@ -38269,13 +38269,13 @@ export const BattleMoveAnims: AnimTable = {
 					x: defender.x,
 					y: defender.y,
 					z: defender.behind(30),
-					scale: 0.6,
-					opacity: 0.2,
+					scale: 1.5,
+					opacity: 0,
 					time: 100 * i + 400 + 200,
 				}, 'linear', 'fade');
 				scene.showEffect('flareball', {
-					x: attacker.x + 30,
-					y: attacker.y,
+					x: attacker.x - 28,
+					y: attacker.y + 20,
 					z: attacker.behind(-30),
 					scale: 0.2,
 					opacity: 0.5,
@@ -38284,8 +38284,70 @@ export const BattleMoveAnims: AnimTable = {
 					x: defender.x,
 					y: defender.y,
 					z: defender.behind(30),
-					scale: 0.4,
-					opacity: 0.1,
+					scale: 1.2,
+					opacity: 0,
+					time: 100 * i + 400 + 200,
+				}, 'accel', 'fade');
+
+				scene.showEffect('electroball', {
+					x: attacker.x + 28, // 40 * cos(30deg) ~ 28
+					y: attacker.y - 20,
+					z: attacker.behind(-30),
+					scale: 0.3,
+					opacity: 0.7,
+					time: 100 * i + 400,
+				}, {
+					x: defender.x,
+					y: defender.y,
+					z: defender.behind(30),
+					scale: 1.5,
+					opacity: 0,
+					time: 100 * i + 400 + 200,
+				}, 'linear', 'fade');
+				scene.showEffect('flareball', {
+					x: attacker.x + 28,
+					y: attacker.y - 20,
+					z: attacker.behind(-30),
+					scale: 0.2,
+					opacity: 0.5,
+					time: 100 * i + 400,
+				}, {
+					x: defender.x,
+					y: defender.y,
+					z: defender.behind(30),
+					scale: 1.2,
+					opacity: 0,
+					time: 100 * i + 400 + 200,
+				}, 'accel', 'fade');
+
+				scene.showEffect('electroball', {
+					x: attacker.x - 28, // 40 * cos(30deg) ~ 28
+					y: attacker.y - 20,
+					z: attacker.behind(-30),
+					scale: 0.3,
+					opacity: 0.7,
+					time: 100 * i + 400,
+				}, {
+					x: defender.x,
+					y: defender.y,
+					z: defender.behind(30),
+					scale: 1.5,
+					opacity: 0,
+					time: 100 * i + 400 + 200,
+				}, 'linear', 'fade');
+				scene.showEffect('flareball', {
+					x: attacker.x - 28,
+					y: attacker.y - 20,
+					z: attacker.behind(-30),
+					scale: 0.2,
+					opacity: 0.5,
+					time: 100 * i + 400,
+				}, {
+					x: defender.x,
+					y: defender.y,
+					z: defender.behind(30),
+					scale: 1.2,
+					opacity: 0,
 					time: 100 * i + 400 + 200,
 				}, 'accel', 'fade');
 			}
