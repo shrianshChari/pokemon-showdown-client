@@ -38148,7 +38148,7 @@ export const BattleMoveAnims: AnimTable = {
 			defender.anim({
 				time: 150,
 			}, 'swing');
-		}
+		},
 	},
 	ficklebeamallout: {
 		anim(scene, [attacker, defender]) {
@@ -38162,7 +38162,7 @@ export const BattleMoveAnims: AnimTable = {
 					z: attacker.behind(-30),
 					scale: 1.5,
 					opacity: 0.3,
-					time: 50 * j
+					time: 50 * j,
 				}, {
 					scale: 0.2,
 					opacity: 1,
