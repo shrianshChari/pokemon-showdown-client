@@ -38343,6 +38343,53 @@ export const BattleMoveAnims: AnimTable = {
 			}, 'swing');
 		},
 	},
+	alluringvoice: {
+		anim(scene, [attacker, defender]) {
+			scene.backgroundEffect('#000000', 800, 0.4);
+			scene.showEffect('iceball', {
+				x: defender.x,
+				y: defender.y - defender.sp.h / 2,
+				z: defender.z,
+				xscale: 1.5,
+				yscale: 0.75,
+				time: 0,
+				opacity: 0.5,
+			}, {
+				time: 800,
+			}, 'linear', 'fade');
+
+			scene.showEffect('mistball', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 0,
+				opacity: 0.5,
+				time: 100,
+			}, {
+				z: attacker.behind(-50),
+				scale: 7,
+				opacity: 0,
+				time: 400,
+			}, 'linear');
+
+			scene.showEffect('mistball', {
+				x: defender.x,
+				y: defender.y,
+				z: defender.z,
+				scale: 0.5,
+				opacity: 0.8,
+				time: 400,
+			}, {
+				time: 650,
+			}, 'linear', 'explode');
+
+			defender.delay(650);
+			defender.anim({
+				z: defender.behind(5),
+				time: 50,
+			}, 'swing');
+		}
+	}
 };
 
 // placeholder animations
