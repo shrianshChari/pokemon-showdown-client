@@ -38345,7 +38345,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	alluringvoice: {
 		anim(scene, [attacker, defender]) {
-			scene.backgroundEffect('#000000', 800, 0.4);
+			scene.backgroundEffect('#000000', 950, 0.4);
 			scene.showEffect('iceball', {
 				x: defender.x,
 				y: defender.y - defender.sp.h / 2,
@@ -38355,38 +38355,56 @@ export const BattleMoveAnims: AnimTable = {
 				time: 0,
 				opacity: 0.5,
 			}, {
-				time: 800,
+				time: 950,
 			}, 'linear', 'fade');
 
-			scene.showEffect('mistball', {
-				x: attacker.x,
-				y: attacker.y,
-				z: attacker.z,
-				scale: 0,
-				opacity: 0.5,
-				time: 100,
-			}, {
-				z: attacker.behind(-50),
-				scale: 7,
-				opacity: 0,
-				time: 400,
-			}, 'linear');
+
+			BattleOtherAnims.sound.anim(scene, [attacker, defender]);
 
 			scene.showEffect('mistball', {
 				x: defender.x,
 				y: defender.y,
 				z: defender.z,
-				scale: 0.5,
-				opacity: 0.8,
-				time: 400,
+				scale: 1,
+				opacity: 0.2,
+				time: 500,
 			}, {
-				time: 650,
-			}, 'linear', 'explode');
+				scale: 0.6,
+				opacity: 0.7,
+				time: 700,
+			}, 'linear', 'fade');
 
-			defender.delay(650);
+			scene.showEffect('iceball', {
+				x: defender.x,
+				y: defender.y,
+				z: defender.z,
+				scale: 0.6,
+				opacity: 0.4,
+				time: 700,
+			}, {
+				time: 850,
+				scale: 1.2,
+			}, 'linear', 'fade');
+
+			scene.showEffect('iceball', {
+				x: defender.x,
+				y: defender.y,
+				z: defender.z,
+				scale: 0.6,
+				opacity: 0.3,
+				time: 800,
+			}, {
+				time: 950,
+				scale: 1.2,
+			}, 'linear', 'fade');
+
+			defender.delay(700);
 			defender.anim({
 				z: defender.behind(5),
 				time: 50,
+			}, 'swing');
+			defender.anim({
+				time: 150,
 			}, 'swing');
 		}
 	}
