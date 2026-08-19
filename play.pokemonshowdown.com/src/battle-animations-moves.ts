@@ -38383,7 +38383,8 @@ export const BattleMoveAnims: AnimTable = {
 				time: 700,
 			}, {
 				time: 850,
-				scale: 1.2,
+				scale: 1.5,
+				opacity: 0,
 			}, 'linear', 'fade');
 
 			scene.showEffect('iceball', {
@@ -38395,7 +38396,8 @@ export const BattleMoveAnims: AnimTable = {
 				time: 800,
 			}, {
 				time: 950,
-				scale: 1.2,
+				scale: 1.8,
+				opacity: 0,
 			}, 'linear', 'fade');
 
 			defender.delay(700);
